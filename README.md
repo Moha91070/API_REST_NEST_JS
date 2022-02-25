@@ -1,1 +1,1 @@
-# API_REST_NEST_JS
+Creation of a Rest API with the Nest JS framework, as part of a university project.

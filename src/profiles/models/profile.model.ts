@@ -1,5 +1,5 @@
 import { Connection } from 'mongoose';
-import { User } from 'src/users/models/user.model';
+import { User } from '../../users/models/user.model';
 import ProfileSchema from '../schemas/profil.schema';
 
 export type Profile = {

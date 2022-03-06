@@ -12,8 +12,8 @@ async function bootstrap() {
     type: VersioningType.URI
   })
   const config = new DocumentBuilder()
-    .setTitle('API example')
-    .setDescription('API description')
+    .setTitle('Facebook_api')
+    .setDescription('API description of routes and how to use it')
     .setVersion('1.0')
     .build();
   const document = SwaggerModule.createDocument(app, config);

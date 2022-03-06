@@ -54,7 +54,7 @@ export class PostController {
   @UseGuards(AuthGuard('jwt'))
   @Get(':id')
   @ApiParam({ name: 'id' })
-  findOne(@Param('id') id: string) {
+  findOne(@Param(':id') id: string) {
     return this.PostService.findOne(id);
   }
 
@@ -62,8 +62,8 @@ export class PostController {
   @Patch(':id')
   @ApiParam({ name: 'id' })
   @ApiOperation({ summary: 'Update post' })
-  update(@Param('id') id: string, @Body() updatePost: Posts) {
-    return this.PostService.update(id, updatePost);
+  async update(@Param('id') id: string, @Body() updatePost: Posts) {
+    return await this.PostService.update(id, updatePost);
   }
 
   @UseGuards(AuthGuard('jwt'))

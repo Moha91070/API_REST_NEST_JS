@@ -1,5 +1,6 @@
-import { Inject, Injectable } from '@nestjs/common';
+import { BadRequestException, Inject, Injectable } from '@nestjs/common';
 import { Model } from 'mongoose';
+import { PostDto } from '../dto';
 import { Post } from '../models/posts.model';
 
 @Injectable()
@@ -9,12 +10,12 @@ export class PostService {
         private readonly postModel: Model<Post>,
     ) { }
 
-    create(post: Post) {
-        return this.postModel.create(post);
+    create(dto: PostDto) {
+        return this.postModel.create(dto);
     }
 
     findAllByUser(id: string) {
-        return this.postModel.findOne({ author: id });
+        return this.postModel.find({ author: id });
     }
 
     findAll() {
@@ -25,8 +26,11 @@ export class PostService {
         return this.postModel.findById(id);
     }
 
-    update(id: string, post: Post) {
-        return this.postModel.findByIdAndUpdate(id, post);
+    update(id: string, dto: PostDto) {
+        let updatedPost = this.postModel.findByIdAndUpdate(id, dto);
+        if (!updatedPost) throw new BadRequestException('Bad Request');
+
+        return true;
     }
 
     remove(id: string) {

@@ -1,0 +1,79 @@
+{
+    "users": [
+        {
+            "email": "dylan@gmail.com",
+            "password": "1234"
+        },
+        {
+            "email": "mohamed@gmail.com",
+            "password": "1234"
+        },
+        {
+            "email": "myriam@gmail.com",
+            "password": "1234"
+        }
+    ],
+    "profiles": [
+        {
+            "firstname": "myriam",
+            "lastname": "batata",
+            "user": {
+                "_id": "622270efb11e217c5fad19d2",
+                "email": "myriam@gmail.com",
+                "password": "1234"
+            }
+        },
+        {
+            "firstname": "mohamed",
+            "lastname": "batata",
+            "user": {
+                "_id": "622270deb11e217c5fad19cf",
+                "email": "mohamed@gmail.com",
+                "password": "1234"
+            }
+        },
+        {
+            "firstname": "dylan",
+            "lastname": "patate",
+            "user": {
+                "_id": "622270c2b11e217c5fad19cc",
+                "email": "dylan@gmail.com",
+                "password": "1234"
+            }
+        }
+    ],
+    "posts":[
+        {
+            "message": "il fait beau",
+            "author": "622270c2b11e217c5fad19cc"
+        },
+        {
+            "message": "il fait moche",
+            "author": "622270c2b11e217c5fad19cc"
+        },
+        {
+            "message": "il fait nuit",
+            "author": "622270deb11e217c5fad19cf"
+        },
+        {
+            "message": "il fait jour",
+            "author": "622270deb11e217c5fad19cf"
+        },
+        {
+            "message": "il est beau",
+            "author": "622270efb11e217c5fad19d2"
+        },
+        {
+            "message": "tu es beau",
+            "author": "622270efb11e217c5fad19d2"
+        },
+        {
+            "message": "nous sommes beau",
+            "author": "622270efb11e217c5fad19d2"
+        },
+        {
+            "message": "Vous etes beau",
+            "author": "622270c2b11e217c5fad19cc"
+        }
+    ]
+}

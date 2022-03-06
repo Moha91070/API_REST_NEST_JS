@@ -1,5 +1,6 @@
-import { Inject, Injectable } from '@nestjs/common';
+import { BadRequestException, Inject, Injectable } from '@nestjs/common';
 import { Model } from 'mongoose';
+import { UpdateProfile } from '../dto';
 import { Profile } from '../models/profile.model';
 
 @Injectable()
@@ -25,8 +26,11 @@ export class ProfileService {
         return this.profileModel.findById(id);
     }
 
-    update(id: string, profile: Profile) {
-        return this.profileModel.findOneAndUpdate({ user: id }, profile);
+    update(id: string, dto: UpdateProfile) {
+        const updatedProfile = this.profileModel.findOneAndUpdate({ user: id }, dto);
+        if (!updatedProfile) throw new BadRequestException('Bad Request');
+
+        return true; 
     }
 
     remove(id: string) {

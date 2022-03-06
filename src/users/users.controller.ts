@@ -16,10 +16,10 @@ import {
 } from '@nestjs/swagger';
 import { AuthGuard } from '@nestjs/passport';
 import { ApiParam } from '@nestjs/swagger';
-import { Profile } from '../profiles/models/profile.model';
 import { UserService } from './services/user.service';
 import { PostService } from '../posts/services/post.service';
 import { ProfileService } from '../profiles/services/profile.service';
+import { UpdateProfile } from "../profiles/dto";
 
 @ApiBearerAuth()
 @ApiTags('users')
@@ -52,8 +52,8 @@ export class UsersController {
   @Patch(':id/profile')
   @ApiParam({ name: 'id' })
   @ApiOperation({summary: 'update a User\'s profile.'})
-  update(@Param('id') id: string, @Body() updateProfile: Profile) {
-    return this.profileServices.update(id, updateProfile);
+  update(@Param('id') id: string, @Body() dto: UpdateProfile) {
+    return this.profileServices.update(id, dto);
   }
 
   @UseGuards(AuthGuard('jwt'))
